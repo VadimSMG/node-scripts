@@ -1,7 +1,9 @@
 #!/bin/bash
 
+echo "Input wallet name:"
+read WALLET_NAME
+
 #Variables
-WALLET_NAME=""
 IP="https://celestia.explorers.guru/"
 
 #System update
