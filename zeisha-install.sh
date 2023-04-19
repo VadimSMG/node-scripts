@@ -41,4 +41,4 @@ bazuka init --bootstrap $BOOTSTRAP --external $EXTERNAL_IP --mnemonic $MNEMONIC
 echo "Input your Discord nickname:"
 read DISCORD
 
-bazuka node start --discord-handle $DISCOR
+bazuka node start --discord-handle $DISCORD
