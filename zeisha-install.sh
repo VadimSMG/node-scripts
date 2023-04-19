@@ -40,7 +40,6 @@ read EXTERNAL_IP
 echo "Input your mnemonic (if have):"
 read MNEMONIC
 
-<<<<<<< HEAD
 echo "Input your Discord nickname:"
 read DISCORD
 
@@ -80,4 +79,3 @@ echo "Input your Discord nickname:"
 read DISCORD
 
 bazuka node start --discord-handle $DISCORD
->>>>>>> d6914bfcb0881d7bdbadb2e14b140c9658cd612f
