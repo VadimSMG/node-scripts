@@ -29,10 +29,8 @@ git pull origin master
 cargo install --path .
 
 #Declare variables
-BOOTSTRAP=()
 echo "Input list boostrap nodes (separate with spaces):"
 read BOOTSTRAP
-echo $BOOTSTRAP
 
 echo "Input your server IP:"
 read EXTERNAL_IP
