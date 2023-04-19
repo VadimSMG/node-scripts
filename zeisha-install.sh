@@ -12,6 +12,7 @@ sudo apt install wget jq git curl build-essential libssl-dev gcc cmake mc -y
 #Install Rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 source ~/.cargo/env
+cd ~
 
 #Erase old node files
 sudo systemctl stop ziesha
