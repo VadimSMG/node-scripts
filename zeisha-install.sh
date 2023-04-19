@@ -29,7 +29,7 @@ echo "Input list boostrap nodes:"
 read BOOTSTRAP
 
 echo "Input your server IP:"
-read EXTERNAL-IP
+read EXTERNAL_IP
 
 echo "Input your mnemonic (if have):"
 read MNEMONIC
