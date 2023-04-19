@@ -34,7 +34,7 @@ read EXTERNAL_IP
 echo "Input your mnemonic (if have):"
 read MNEMONIC
 
-bazuka init --bootstrap $BOOTSTRAP --external $EXTERNAL_IP --mnemonic $MNEMONIC
+bazuka init --bootstrap $BOOTSTRAP --external $EXTERNAL_IP:8765 --mnemonic $MNEMONIC
 
 #Node run
 
