@@ -51,7 +51,7 @@ echo "Input your Discord nickname:"
 read DISCORD
 
 #Node init
-bazuka init --bootstrap $BOOTSTRAP1 --bootstrap $BOOTSTRAP2 --bootstrap $BOOTSTRAP3 --bootstrap $BOOTSTRAP4 --external $EXTERNAL_IP --mnemonic $MNEMONIC
+bazuka init --bootstrap $BOOTSTRAP1 --bootstrap $BOOTSTRAP2 --bootstrap $BOOTSTRAP3 --bootstrap $BOOTSTRAP4 --external $EXTERNAL_IP --mnemonic "$MNEMONIC"
 
 #SystemD service create
 sudo tee <<EOF >/dev/null /etc/systemd/system/ziesha.service
