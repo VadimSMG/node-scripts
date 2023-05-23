@@ -29,8 +29,17 @@ git pull origin master
 cargo install --path .
 
 #Declare variables
-echo "Input list boostrap nodes (separate with spaces):"
-read BOOTSTRAP
+echo "Input 1st boostrap node:"
+read BOOTSTRAP1
+
+echo "Input 2nd boostrap node:"
+read BOOTSTRAP2
+
+echo "Input 3rd boostrap node:"
+read BOOTSTRAP3
+
+echo "Input 4th boostrap node:"
+read BOOTSTRAP4
 
 echo "Input your server IP:"
 read EXTERNAL_IP
@@ -42,7 +51,7 @@ echo "Input your Discord nickname:"
 read DISCORD
 
 #Node init
-bazuka init --bootstrap $BOOTSTRAP --external $EXTERNAL_IP --mnemonic $MNEMONIC
+bazuka init --bootstrap $BOOTSTRAP1 --bootstrap $BOOTSTRAP2 --bootstrap $BOOTSTRAP3 --bootstrap $BOOTSTRAP4 --external $EXTERNAL_IP --mnemonic $MNEMONIC
 
 #SystemD service create
 sudo tee <<EOF >/dev/null /etc/systemd/system/ziesha.service
