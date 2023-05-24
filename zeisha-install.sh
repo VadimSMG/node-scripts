@@ -53,6 +53,9 @@ read DISCORD
 #Node init
 bazuka init --bootstrap $BOOTSTRAP1 --bootstrap $BOOTSTRAP2 --bootstrap $BOOTSTRAP3 --bootstrap $BOOTSTRAP4 --mnemonic "$MNEMONIC"
 
+#Repair IP error in bazuka.yaml
+nano ~/.bazuka.yaml
+
 #Export variables into bash profile
 echo "export DISCORD="${DISCORD}"" >> $HOME/.bash_profile
 source $HOME/.bash_profile
