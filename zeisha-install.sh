@@ -53,6 +53,10 @@ read DISCORD
 #Node init
 bazuka init --bootstrap $BOOTSTRAP1 --bootstrap $BOOTSTRAP2 --bootstrap $BOOTSTRAP3 --bootstrap $BOOTSTRAP4 --mnemonic "$MNEMONIC"
 
+#Export variables into bash profile
+echo "export DISCORD="${DISCORD}"" >> $HOME/.bash_profile
+source $HOME/.bash_profile
+
 #SystemD service create
 sudo tee <<EOF >/dev/null /etc/systemd/system/ziesha.service
 [Unit]
