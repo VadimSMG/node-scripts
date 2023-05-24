@@ -77,12 +77,3 @@ sudo systemctl restart ziesha
 
 #Output logs of service working
 sudo journalctl -f -u ziesha
-=======
-bazuka init --bootstrap $BOOTSTRAP --external $EXTERNAL_IP:8765 --mnemonic $MNEMONIC
-
-#Node run
-
-echo "Input your Discord nickname:"
-read DISCORD
-
-bazuka node start --discord-handle $DISCORD
