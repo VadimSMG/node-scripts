@@ -1,4 +1,5 @@
 #Update system
+cd ~
 apt -q update
 apt -qy install curl git jq lz4 build-essential
 apt -qy upgrade
@@ -15,6 +16,7 @@ read NODEVERS
 git clone https://github.com/Nolus-Protocol/nolus-core
 cd nolus-core
 git checkout $$NODEVERS
+
 make install
 make build
 
