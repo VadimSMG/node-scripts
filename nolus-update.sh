@@ -2,7 +2,7 @@
 systemctl stop nolusd
 
 #Input actual Nolus version
-echo "Input actual Nolus version (example v0.1.43):"
+echo "Input actual Nolus version (example v0.4.0):"
 read NOLUSVER
 
 #Installing actual Nolus
