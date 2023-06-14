@@ -44,14 +44,14 @@ read BOOTSTRAP4
 echo "Input your server IP:"
 read EXTERNAL_IP
 
-echo "Input your mnemonic as --mnemonic your mnemonic (if have):"
+echo "Input your mnemonic (if have):"
 read MNEMONIC
 
 echo "Input your Discord nickname:"
 read DISCORD
 
 #Node init
-bazuka init --bootstrap $BOOTSTRAP1 --bootstrap $BOOTSTRAP2 --bootstrap $BOOTSTRAP3 --bootstrap $BOOTSTRAP4 "$MNEMONIC"
+bazuka init --bootstrap $BOOTSTRAP1 --bootstrap $BOOTSTRAP2 --bootstrap $BOOTSTRAP3 --bootstrap $BOOTSTRAP4 --mnemonic "$MNEMONIC"
 
 #Repair IP error in bazuka.yaml
 nano ~/.bazuka.yaml
