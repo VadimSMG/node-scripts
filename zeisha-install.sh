@@ -44,7 +44,7 @@ read BOOTSTRAP4
 echo "Input your server IP:"
 read EXTERNAL_IP
 
-echo "Input your mnemonic as --mnemonic "<your mnemonic>" (if have):"
+echo "Input your mnemonic as --mnemonic your mnemonic (if have):"
 read MNEMONIC
 
 echo "Input your Discord nickname:"
