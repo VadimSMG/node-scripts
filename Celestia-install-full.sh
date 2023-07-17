@@ -68,5 +68,27 @@ EXTERNAL_ADDRESS=$(wget -qO- eth0.me)
 sed -i.bak -e "s/^external_address = \"\"/external_address = \"$EXTERNAL_ADDRESS:26656\"/" $HOME/.celestia-app/config/config.toml
 sed -i 's#"tcp://127.0.0.1:26657"#"tcp://0.0.0.0:26657"#g' ~/.celestia-app/config/config.toml
 
-echo -e "\033[0;34mStarting celestia app"
-celestia-appd start
+#echo -e "\033[0;34mStarting celestia app"
+#celestia-appd start
+
+echo -e "\033[0;34mCreating celestia app service"
+sudo tee <<EOF >/dev/null /etc/systemd/system/celestia-appd-full.service
+[Unit]
+Description=celestia-full Cosmos daemon
+After=network-online.target
+
+[Service]
+User=$USER
+ExecStart=$HOME/go/bin/celestia-appd start
+Restart=on-failure
+RestartSec=3
+LimitNOFILE=4096
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+echo -e "\033[0;34mStarting celestia app service"
+sudo systemctl enable celestia-appd-full
+sudo systemctl start celestia-appd-full && sudo journalctl -u \
+celestia-appd-full.service -f
