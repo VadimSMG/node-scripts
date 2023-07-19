@@ -17,6 +17,7 @@ echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 
 echo -e "\033[0;34mInstall celestia-app"
+rm -rf /root/.celestia-app/config/genesis.json
 cd $HOME
 rm -rf celestia-app
 git clone https://github.com/celestiaorg/celestia-app.git
