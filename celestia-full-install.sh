@@ -24,10 +24,14 @@ git checkout tags/v0.11.0-rc8
 make build
 make install
 
+echo "4. CEL-KEY MAKING"
+make cel-key
+echo "Input node name:"
+read NODENAME
+./cel-key add $NODENAME --keyring-backend test --node.type full --p2p.network mocha-3 --recover
 
-
-#Node init
-celestia light init
+echo "5. NODE INITIALISE"
+celestia full init
 
 #Wallet import
 echo "Wallet name: $WALLET_NAME"
