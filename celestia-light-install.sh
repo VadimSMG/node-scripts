@@ -43,7 +43,7 @@ Description=celestia-lightd Light Node
 After=network-online.target
 [Service]
 User=$USER
-ExecStart=$HOME/go/bin/celestia light start --core.ip $RPCIP --keyring.accname $NODENAME --p2p.network mocha-3
+ExecStart=/usr/local/bin/celestia light start --core.ip $RPCIP --keyring.accname $NODENAME --p2p.network mocha-3
 Restart=on-failure
 RestartSec=3
 LimitNOFILE=4096
