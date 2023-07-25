@@ -33,20 +33,22 @@ read NODENAME
 echo "5. NODE INITIALISE"
 celestia full init
 
-#Wallet import
-echo "Wallet name: $WALLET_NAME"
+echo "6. WALLET IMPORT"
+echo "Input wallet name:"
+read WALLET_NAME
+./cel-key add $WALLET_NAME --keyring-backend test --node.type full --recover
 
-./cel-key add $WALLET_NAME --keyring-backend test --node.type light --recover
-
-#SystemD service creating and starting
-sudo tee <<EOF >/dev/null /etc/systemd/system/celestia-lightd.service
+echo "6. SERVICE CREATING"
+echo "Input RPC IP"
+read RPCIP
+sudo tee <<EOF >/dev/null /etc/systemd/system/celestia-fulld.service
 [Unit]
-Description=celestia-lightd Light Node
+Description=celestia-fulld Full Node
 After=network-online.target
 
 [Service]
 User=$USER
-ExecStart=$(which celestia) light start --core.ip $IP --keyring.accname $WALLET_NAME
+ExecStart=$ /usr/local/bin/celestia full start --core.ip #RPCIP --keyring.accname $WALLET_NAME
 Restart=on-failure
 RestartSec=3
 LimitNOFILE=4096
@@ -55,8 +57,8 @@ LimitNOFILE=4096
 WantedBy=multi-user.target
 EOF
 
-sudo systemctl enable celestia-lightd
-sudo systemctl start celestia-lightd
+echo "7. SERVICE START"
+sudo systemctl enable celestia-fulld
+sudo systemctl start celestia-fulld
 
-#Service logs
-sudo journalctl -u celestia-lightd.service -f
+#sudo journalctl -u celestia-fulld.service -f
