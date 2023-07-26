@@ -43,7 +43,7 @@ After=network-online.target
 
 [Service]
 User=$USER
-ExecStart=/usr/local/bin/celestia full start --core.ip #RPCIP --keyring.accname $WALLET_NAME --p2p.network mocha-3
+ExecStart=/usr/local/bin/celestia full start --core.ip #RPCIP --keyring.accname $NODENAME --p2p.network mocha-3
 Restart=on-failure
 RestartSec=3
 LimitNOFILE=4096
