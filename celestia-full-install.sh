@@ -33,11 +33,6 @@ read NODENAME
 echo "5. NODE INITIALISE"
 celestia full init
 
-echo "6. WALLET IMPORT"
-echo "Input wallet name:"
-read WALLET_NAME
-./cel-key add $WALLET_NAME --keyring-backend test --node.type full --recover
-
 echo "6. SERVICE CREATING"
 echo "Input RPC IP"
 read RPCIP
