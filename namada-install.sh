@@ -37,5 +37,28 @@ echo "5.1 Joining the network. Input actual chain-id:"
 read CHAIN_ID
 namada client utils join-network --chain-id $CHAIN_ID
 
-echo "5.2 Start node and sync"
-CMT_LOG_LEVEL=p2p:none,pex:error namada node ledger run
+echo "5.2 Creating service"
+CMT_LOG_LEVEL=p2p:none,pex:e
+
+sudo tee <<EOF >/dev/null /etc/systemd/system/namadad.service
+[Unit]
+Description=Namada Node Service
+After=network-online.target
+
+[Service]
+User=$USER
+ExecStart=/root/.cargo/bin/namada node ledger run
+Restart=on-failure
+RestartSec=3
+LimitNOFILE=4096
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+echo "5.3 Starting service"
+sudo systemctl enable namadad
+sudo systemctl start namadad
+sudo journalctl -u namadad.service -f
+
+#CMT_LOG_LEVEL=p2p:none,pex:error namada node ledger run
