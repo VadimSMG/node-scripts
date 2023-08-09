@@ -4,6 +4,7 @@ sudo apt upgrade -y
 
 echo "1.1 Installing RUST"
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+source $HOME/.cargo/env
 rustup update
 
 echo "1.2 Installing Golang, Git, Clang, OpenSSL, LLVM"
