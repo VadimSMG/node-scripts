@@ -39,15 +39,16 @@ echo "6. LIGHT NODE INIT"
 celestia light init --p2p.network arabica
 
 echo "7. MAKING NODE SERVICE"
-#echo "Input RPC ip-address:"
-#read RPCIP
+echo "Input RPC ip-address:"
+read RPCIP
+#https://docs.celestia.org/nodes/arabica-devnet/#rpc-endpoints
 sudo tee <<EOF >/dev/null /etc/systemd/system/celestia-lightd.service
 [Unit]
 Description=celestia-lightd Light Node
 After=network-online.target
 [Service]
 User=$USER
-ExecStart=/usr/local/bin/celestia light start --core.ip consensus-full-$CHAINID.celestia-arabica.com --keyring.accname $NODENAME --p2p.network $CHAINID
+ExecStart=/usr/local/bin/celestia light start --core.ip $RPCIP --keyring.accname $NODENAME --p2p.network $CHAINID
 Restart=on-failure
 RestartSec=3
 LimitNOFILE=4096
