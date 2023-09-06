@@ -17,11 +17,13 @@ echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 
 echo "4. NODE INSTALL"
+echo "Input actual Node Version (v0.11.0-rc??):"
+read NODEVER
 cd $HOME
 rm -rf celestia-node
 git clone https://github.com/celestiaorg/celestia-node.git
 cd celestia-node/
-git checkout tags/v0.11.0-rc8
+git checkout tags/$NODEVER
 make build
 make install
 
@@ -29,7 +31,9 @@ echo "5. CEL-KEY MAKING"
 make cel-key
 echo "Input node name:"
 read NODENAME
-./cel-key add $NODENAME --keyring-backend test --node.type light --p2p.network arabica-9 --recover
+echo "Input chain-id (arabica-??):"
+read CHAINID
+./cel-key add $NODENAME --keyring-backend test --node.type light --p2p.network $CHAINID --recover
 
 echo "6. LIGHT NODE INIT"
 celestia light init --p2p.network arabica
@@ -43,7 +47,7 @@ Description=celestia-lightd Light Node
 After=network-online.target
 [Service]
 User=$USER
-ExecStart=/usr/local/bin/celestia light start --core.ip consensus-full-arabica-9.celestia-arabica.com --keyring.accname $NODENAME --p2p.network arabica-9
+ExecStart=/usr/local/bin/celestia light start --core.ip consensus-full-$CHAINID.celestia-arabica.com --keyring.accname $NODENAME --p2p.network $CHAINID
 Restart=on-failure
 RestartSec=3
 LimitNOFILE=4096
