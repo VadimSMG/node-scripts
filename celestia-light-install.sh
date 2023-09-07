@@ -39,13 +39,15 @@ celestia light init
 echo "7. MAKING NODE SERVICE"
 echo "Input RPC ip-address:"
 read RPCIP
+echo "Input testnet version (mocha-?):"
+read TESTNETVER
 sudo tee <<EOF >/dev/null /etc/systemd/system/celestia-lightd.service
 [Unit]
 Description=celestia-lightd Light Node
 After=network-online.target
 [Service]
 User=$USER
-ExecStart=/usr/local/bin/celestia light start --core.ip $RPCIP --keyring.accname $NODENAME --p2p.network mocha-3
+ExecStart=/usr/local/bin/celestia light start --core.ip $RPCIP --keyring.accname $NODENAME --p2p.network $TESTNETVER
 Restart=on-failure
 RestartSec=3
 LimitNOFILE=4096
