@@ -17,11 +17,13 @@ echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 
 echo "4. NODE INSTALL"
+echo "Input actual Node Version (v0.11.0-rc??):"
+read NODEVER
 cd $HOME
 rm -rf celestia-node
 git clone https://github.com/celestiaorg/celestia-node.git
 cd celestia-node/
-git checkout tags/v0.11.0-rc8
+git checkout tags/$NODEVER
 make build
 make install
 
