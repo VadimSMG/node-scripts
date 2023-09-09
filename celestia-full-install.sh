@@ -5,7 +5,7 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential git make ncdu -y
 
 echo "2. INSTALLING GOLANG"
-ver="1.20.2"
+ver="1.21.0"
 cd $HOME
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
 sudo rm -rf /usr/local/go
@@ -16,11 +16,13 @@ echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 
 echo "3. NODE INSTALL"
+echo "Input actual Node Version (v0.11.0-rc??):"
+read NODEVER
 cd $HOME
 rm -rf celestia-node
 git clone https://github.com/celestiaorg/celestia-node.git
 cd celestia-node/
-git checkout tags/v0.11.0-rc8
+git checkout tags/$NODEVER
 make build
 make install
 
@@ -36,6 +38,8 @@ celestia full init
 echo "6. SERVICE CREATING"
 echo "Input RPC IP"
 read RPCIP
+echo "Input testnet version (mocha-?):"
+read TESTNETVER
 sudo tee <<EOF >/dev/null /etc/systemd/system/celestia-fulld.service
 [Unit]
 Description=celestia-fulld Full Node
@@ -43,7 +47,7 @@ After=network-online.target
 
 [Service]
 User=$USER
-ExecStart=/usr/local/bin/celestia full start --core.ip $RPCIP --keyring.accname $NODENAME --p2p.network mocha-3
+ExecStart=/usr/local/bin/celestia full start --core.ip $RPCIP --keyring.accname $NODENAME --p2p.network $TESTNETVER
 Restart=on-failure
 RestartSec=3
 LimitNOFILE=4096
@@ -55,5 +59,5 @@ EOF
 echo "7. SERVICE START"
 sudo systemctl enable celestia-fulld
 sudo systemctl start celestia-fulld
-
+sudo systemctl status celestia-fulld
 #sudo journalctl -u celestia-fulld.service -f
