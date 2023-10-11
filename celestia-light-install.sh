@@ -1,5 +1,6 @@
 echo "1. SYSTEM UPDATE"
-sudo apt update && sudo apt upgrade -y
+sudo apt update -y
+sudo apt upgrade -y
 
 echo "2. SOFTWARE INSTALL"
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential 
@@ -19,6 +20,12 @@ source $HOME/.bash_profile
 echo "4. NODE INSTALL"
 echo "Input actual Node Version (v0.11.0-rc??):"
 read NODEVER
+echo "Input node name:"
+read NODENAME
+echo "Input RPC ip-address:"
+read RPCIP
+echo "Input testnet version (mocha-?):"
+read TESTNETVER
 cd $HOME
 rm -rf celestia-node
 git clone https://github.com/celestiaorg/celestia-node.git
@@ -29,18 +36,18 @@ make install
 
 echo "5. CEL-KEY MAKING"
 make cel-key
-echo "Input node name:"
-read NODENAME
+#echo "Input node name:"
+#read NODENAME
 ./cel-key add $NODENAME --keyring-backend test --node.type light --p2p.network mocha-3 --recover
 
 echo "6. LIGHT NODE INIT"
 celestia light init
 
 echo "7. MAKING NODE SERVICE"
-echo "Input RPC ip-address:"
-read RPCIP
-echo "Input testnet version (mocha-?):"
-read TESTNETVER
+#echo "Input RPC ip-address:"
+#read RPCIP
+#echo "Input testnet version (mocha-?):"
+#read TESTNETVER
 sudo tee <<EOF >/dev/null /etc/systemd/system/celestia-lightd.service
 [Unit]
 Description=celestia-lightd Light Node
