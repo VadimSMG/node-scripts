@@ -38,7 +38,7 @@ echo "5. CEL-KEY MAKING"
 make cel-key
 #echo "Input node name:"
 #read NODENAME
-./cel-key add $NODENAME --keyring-backend test --node.type light --p2p.network mocha-3 --recover
+./cel-key add $NODENAME --keyring-backend test --node.type light --p2p.network $TESTNETVER --recover
 
 echo "6. LIGHT NODE INIT"
 celestia light init
