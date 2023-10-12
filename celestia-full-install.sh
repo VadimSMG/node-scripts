@@ -63,6 +63,7 @@ WantedBy=multi-user.target
 EOF
 
 echo "7. SERVICE START"
+celestia full config-update --p2p.network $TESTNETVER
 sudo systemctl enable celestia-fulld
 sudo systemctl start celestia-fulld
 sudo systemctl status celestia-fulld
