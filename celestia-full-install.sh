@@ -18,6 +18,12 @@ source $HOME/.bash_profile
 echo "3. NODE INSTALL"
 echo "Input actual Node Version (v0.11.0-rc??):"
 read NODEVER
+echo "Input node name:"
+read NODENAME
+echo "Input RPC IP"
+read RPCIP
+echo "Input testnet version (mocha-?):"
+read TESTNETVER
 cd $HOME
 rm -rf celestia-node
 git clone https://github.com/celestiaorg/celestia-node.git
@@ -28,18 +34,18 @@ make install
 
 echo "4. CEL-KEY MAKING"
 make cel-key
-echo "Input node name:"
-read NODENAME
-./cel-key add $NODENAME --keyring-backend test --node.type full --p2p.network mocha-3 --recover
+#echo "Input node name:"
+#read NODENAME
+./cel-key add $NODENAME --keyring-backend test --node.type full --p2p.network $TESTNETVER --recover
 
 echo "5. NODE INITIALISE"
 celestia full init
 
 echo "6. SERVICE CREATING"
-echo "Input RPC IP"
-read RPCIP
-echo "Input testnet version (mocha-?):"
-read TESTNETVER
+#echo "Input RPC IP"
+#read RPCIP
+#echo "Input testnet version (mocha-?):"
+#read TESTNETVER
 sudo tee <<EOF >/dev/null /etc/systemd/system/celestia-fulld.service
 [Unit]
 Description=celestia-fulld Full Node
