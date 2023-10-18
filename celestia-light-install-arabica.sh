@@ -19,6 +19,12 @@ source $HOME/.bash_profile
 echo "4. NODE INSTALL"
 echo "Input actual Node Version (v0.11.0-rc??):"
 read NODEVER
+echo "Input node name:"
+read NODENAME
+echo "Input chain-id (arabica-??):"
+read CHAINID
+echo "Input RPC ip-address:"
+read RPCIP
 cd $HOME
 rm -rf celestia-node
 git clone https://github.com/celestiaorg/celestia-node.git
@@ -29,18 +35,18 @@ make install
 
 echo "5. CEL-KEY MAKING"
 make cel-key
-echo "Input node name:"
-read NODENAME
-echo "Input chain-id (arabica-??):"
-read CHAINID
+#echo "Input node name:"
+#read NODENAME
+#echo "Input chain-id (arabica-??):"
+#read CHAINID
 ./cel-key add $NODENAME --keyring-backend test --node.type light --p2p.network $CHAINID --recover
 
 echo "6. LIGHT NODE INIT"
 celestia light init --p2p.network arabica
 
 echo "7. MAKING NODE SERVICE"
-echo "Input RPC ip-address:"
-read RPCIP
+#echo "Input RPC ip-address:"
+#read RPCIP
 #https://docs.celestia.org/nodes/arabica-devnet/#rpc-endpoints
 sudo tee <<EOF >/dev/null /etc/systemd/system/celestia-lightd.service
 [Unit]
