@@ -1,0 +1,4 @@
+#!/bin/sh
+sudo apt update && sudo apt upgrade -y
+sudo apt install curl git wget build-essential jq screen -y
+/bin/bash -c "$(curl -fsSL https://get.voi.network/swarm)"
