@@ -1,0 +1,342 @@
+{
+  "data": [
+    {
+      "tenantId": "INT",
+      "customerId": "11708036",
+      "additionalIps": [],
+      "name": "vmi1063448",
+      "displayName": "",
+      "instanceId": 201063448,
+      "dataCenter": "European Union 3",
+      "region": "EU",
+      "regionName": "European Union",
+      "productId": "V36",
+      "imageId": "afecbb85-e2fc-46f0-9684-b46b1faf00bb",
+      "ipConfig": {
+        "v4": {
+          "ip": "194.163.134.151",
+          "gateway": "194.163.128.1",
+          "netmaskCidr": 18
+        },
+        "v6": {
+          "ip": "2a02:c206:2106:3448:0000:0000:0000:0001",
+          "gateway": "fe80::1",
+          "netmaskCidr": 64
+        }
+      },
+      "macAddress": "00:50:56:48:79:d7",
+      "ramMb": 8192,
+      "cpuCores": 4,
+      "osType": "Linux",
+      "diskMb": 819200,
+      "createdDate": "2022-10-31T14:12:25.000Z",
+      "cancelDate": null,
+      "status": "running",
+      "vHostId": 21956,
+      "vHostNumber": 25427,
+      "vHostName": "m25427",
+      "addOns": [],
+      "productType": "storage",
+      "productName": "VPS M Storage",
+      "defaultUser": "root"
+    },
+    {
+      "tenantId": "INT",
+      "customerId": "11708036",
+      "additionalIps": [],
+      "name": "vmi1112635",
+      "displayName": "",
+      "instanceId": 201112635,
+      "dataCenter": "European Union 2",
+      "region": "EU",
+      "regionName": "European Union",
+      "productId": "V36",
+      "imageId": null,
+      "ipConfig": {
+        "v4": {
+          "ip": "164.68.112.77",
+          "gateway": "164.68.112.1",
+          "netmaskCidr": 24
+        },
+        "v6": {
+          "ip": "2a02:c207:2111:2635:0000:0000:0000:0001",
+          "gateway": "fe80::1",
+          "netmaskCidr": 64
+        }
+      },
+      "macAddress": "00:50:56:49:0d:9e",
+      "ramMb": 8192,
+      "cpuCores": 4,
+      "osType": "Linux",
+      "diskMb": 819200,
+      "createdDate": "2022-12-01T00:28:19.000Z",
+      "cancelDate": null,
+      "status": "running",
+      "vHostId": 7777,
+      "vHostNumber": 11616,
+      "vHostName": "m11616",
+      "addOns": [],
+      "productType": "storage",
+      "productName": "",
+      "defaultUser": "root"
+    },
+    {
+      "tenantId": "INT",
+      "customerId": "11708036",
+      "additionalIps": [],
+      "name": "vmi1308237",
+      "displayName": "",
+      "instanceId": 201308237,
+      "dataCenter": "European Union 3",
+      "region": "EU",
+      "regionName": "European Union",
+      "productId": "V56",
+      "imageId": null,
+      "ipConfig": {
+        "v4": {
+          "ip": "45.85.146.92",
+          "gateway": "45.85.146.1",
+          "netmaskCidr": 23
+        },
+        "v6": {
+          "ip": "2a02:c206:2130:8237:0000:0000:0000:0001",
+          "gateway": "fe80::1",
+          "netmaskCidr": 64
+        }
+      },
+      "macAddress": "00:50:56:4b:31:4f",
+      "ramMb": 24576,
+      "cpuCores": 10,
+      "osType": "Windows",
+      "diskMb": 3276800,
+      "createdDate": "2023-05-17T10:00:00.000Z",
+      "cancelDate": null,
+      "status": "running",
+      "vHostId": 16812,
+      "vHostNumber": 20304,
+      "vHostName": "m20304",
+      "addOns": [
+        {
+          "id": 1678,
+          "quantity": 1
+        }
+      ],
+      "productType": "storage",
+      "productName": "VPS 4 Storage",
+      "defaultUser": "administrator"
+    },
+    {
+      "tenantId": "INT",
+      "customerId": "11708036",
+      "additionalIps": [],
+      "name": "vmi1315787",
+      "displayName": "",
+      "instanceId": 201315787,
+      "dataCenter": "European Union 2",
+      "region": "EU",
+      "regionName": "European Union",
+      "productId": "V14",
+      "imageId": null,
+      "ipConfig": {
+        "v4": {
+          "ip": "161.97.79.184",
+          "gateway": "161.97.64.1",
+          "netmaskCidr": 18
+        },
+        "v6": {
+          "ip": "2a02:c207:2131:5787:0000:0000:0000:0001",
+          "gateway": "fe80::1",
+          "netmaskCidr": 64
+        }
+      },
+      "macAddress": "00:50:56:4b:46:a2",
+      "ramMb": 30720,
+      "cpuCores": 8,
+      "osType": "Linux",
+      "diskMb": 204800,
+      "createdDate": "2023-05-25T12:39:54.000Z",
+      "cancelDate": null,
+      "status": "running",
+      "vHostId": 14102,
+      "vHostNumber": 17774,
+      "vHostName": "m17774",
+      "addOns": [],
+      "productType": "nvme",
+      "productName": "VPS L NVMe",
+      "defaultUser": "root"
+    },
+    {
+      "tenantId": "INT",
+      "customerId": "11708036",
+      "additionalIps": [],
+      "name": "vmi1335337",
+      "displayName": "",
+      "instanceId": 201335337,
+      "dataCenter": "European Union 2",
+      "region": "EU",
+      "regionName": "European Union",
+      "productId": "V1",
+      "imageId": null,
+      "ipConfig": {
+        "v4": {
+          "ip": "95.111.228.63",
+          "gateway": "95.111.224.1",
+          "netmaskCidr": 20
+        },
+        "v6": {
+          "ip": "2a02:c207:2133:5337:0000:0000:0000:0001",
+          "gateway": "fe80::1",
+          "netmaskCidr": 64
+        }
+      },
+      "macAddress": "00:50:56:4b:78:64",
+      "ramMb": 8192,
+      "cpuCores": 4,
+      "osType": "Linux",
+      "diskMb": 204800,
+      "createdDate": "2023-06-13T13:13:43.000Z",
+      "cancelDate": null,
+      "status": "running",
+      "vHostId": 6297,
+      "vHostNumber": 10181,
+      "vHostName": "m10181",
+      "addOns": [],
+      "productType": "ssd",
+      "productName": "VPS S SSD",
+      "defaultUser": "root"
+    },
+    {
+      "tenantId": "INT",
+      "customerId": "11708036",
+      "additionalIps": [],
+      "name": "vmi1335339",
+      "displayName": "",
+      "instanceId": 201335339,
+      "dataCenter": "European Union 2",
+      "region": "EU",
+      "regionName": "European Union",
+      "productId": "V1",
+      "imageId": null,
+      "ipConfig": {
+        "v4": {
+          "ip": "95.111.230.70",
+          "gateway": "95.111.224.1",
+          "netmaskCidr": 20
+        },
+        "v6": {
+          "ip": "2a02:c207:2133:5339:0000:0000:0000:0001",
+          "gateway": "fe80::1",
+          "netmaskCidr": 64
+        }
+      },
+      "macAddress": "00:50:56:4b:78:66",
+      "ramMb": 8192,
+      "cpuCores": 4,
+      "osType": "Linux",
+      "diskMb": 204800,
+      "createdDate": "2023-06-13T13:13:43.000Z",
+      "cancelDate": null,
+      "status": "running",
+      "vHostId": 11947,
+      "vHostNumber": 15716,
+      "vHostName": "m15716",
+      "addOns": [],
+      "productType": "ssd",
+      "productName": "VPS S SSD",
+      "defaultUser": "root"
+    },
+    {
+      "tenantId": "INT",
+      "customerId": "11708036",
+      "additionalIps": [],
+      "name": "vmi1335340",
+      "displayName": "",
+      "instanceId": 201335340,
+      "dataCenter": "European Union 3",
+      "region": "EU",
+      "regionName": "European Union",
+      "productId": "V1",
+      "imageId": null,
+      "ipConfig": {
+        "v4": {
+          "ip": "185.182.186.32",
+          "gateway": "185.182.184.1",
+          "netmaskCidr": 22
+        },
+        "v6": {
+          "ip": "2a02:c206:2133:5340:0000:0000:0000:0001",
+          "gateway": "fe80::1",
+          "netmaskCidr": 64
+        }
+      },
+      "macAddress": "00:50:56:4b:78:67",
+      "ramMb": 8192,
+      "cpuCores": 4,
+      "osType": "Linux",
+      "diskMb": 204800,
+      "createdDate": "2023-06-13T13:13:43.000Z",
+      "cancelDate": null,
+      "status": "running",
+      "vHostId": 12435,
+      "vHostNumber": 16168,
+      "vHostName": "m16168",
+      "addOns": [],
+      "productType": "ssd",
+      "productName": "VPS S SSD",
+      "defaultUser": "root"
+    },
+    {
+      "tenantId": "INT",
+      "customerId": "11708036",
+      "additionalIps": [],
+      "name": "vmi1335338",
+      "displayName": "",
+      "instanceId": 201335338,
+      "dataCenter": "European Union 2",
+      "region": "EU",
+      "regionName": "European Union",
+      "productId": "V1",
+      "imageId": null,
+      "ipConfig": {
+        "v4": {
+          "ip": "95.111.229.240",
+          "gateway": "95.111.224.1",
+          "netmaskCidr": 20
+        },
+        "v6": {
+          "ip": "2a02:c207:2133:5338:0000:0000:0000:0001",
+          "gateway": "fe80::1",
+          "netmaskCidr": 64
+        }
+      },
+      "macAddress": "00:50:56:4b:78:65",
+      "ramMb": 8192,
+      "cpuCores": 4,
+      "osType": "Linux",
+      "diskMb": 204800,
+      "createdDate": "2023-06-13T13:13:43.000Z",
+      "cancelDate": null,
+      "status": "running",
+      "vHostId": 7913,
+      "vHostNumber": 11752,
+      "vHostName": "m11752",
+      "addOns": [],
+      "productType": "ssd",
+      "productName": "VPS S SSD",
+      "defaultUser": "root"
+    }
+  ],
+  "_links": {
+    "first": "/v1/compute/instances?size=10",
+    "previous": "",
+    "next": "",
+    "last": "/v1/compute/instances?page=1&size=10",
+    "self": "/v1/compute/instances"
+  },
+  "_pagination": {
+    "size": 10,
+    "totalElements": 8,
+    "totalPages": 1,
+    "page": 1
+  }
+}
